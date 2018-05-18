@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace InterpreterPattern
 {
-    //  抽象表達式                                                           
+    //  抽象表達式
     public abstract class Expression
     {
         protected Dictionary<string, int> table = new Dictionary<string, int>(9);
@@ -48,14 +48,14 @@ namespace InterpreterPattern
 
         public abstract int Multiplier();
 
-        //這個可以通用，但是對於個位數字例外，所以用虛方法                                                  
+        //這個可以通用，但是對於個位數字例外，所以用虛方法
         public virtual int GetLength()
         {
             return GetPostFix().Length + 1;
         }
     }
 
-    //個位表達式                                                                 
+    //個位表達式
     public sealed class GeExpression : Expression
     {
         public override string GetPostFix()
@@ -74,7 +74,7 @@ namespace InterpreterPattern
         }
     }
 
-    //十位表達式                                                                 
+    //十位表達式
     public sealed class ShiExpression : Expression
     {
         public override string GetPostFix()
@@ -88,7 +88,7 @@ namespace InterpreterPattern
         }
     }
 
-    //百位表達式                                                                 
+    //百位表達式
     public sealed class BaiExpression : Expression
     {
         public override string GetPostFix()
@@ -102,7 +102,7 @@ namespace InterpreterPattern
         }
     }
 
-    //千位表達式                                                                     
+    //千位表達式
     public sealed class QianExpression : Expression
     {
         public override string GetPostFix()
@@ -116,7 +116,7 @@ namespace InterpreterPattern
         }
     }
 
-    //萬位表達式                                                                     
+    //萬位表達式
     public sealed class WanExpression : Expression
     {
         public override string GetPostFix()
@@ -162,7 +162,7 @@ namespace InterpreterPattern
         }
     }
 
-    //億位表達式                                                                     
+    //億位表達式
     public sealed class YiExpression : Expression
     {
         public override string GetPostFix()
@@ -202,7 +202,7 @@ namespace InterpreterPattern
         }
     }
 
-    //環境上下文                                                                     
+    //環境上下文
     public sealed class Context
     {
         private string _statement;
